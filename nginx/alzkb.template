@@ -36,3 +36,16 @@ server {
         proxy_redirect off;
     }
 }
+server {
+    listen 443 ssl;
+    server_name $ALZKB_NEO4J_BROWSER;
+
+    ssl_certificate /etc/ssl/certs/$ALZKB_CERT;
+    ssl_certificate_key /etc/ssl/private/$ALZKB_CERT_KEY;
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_pass http://$ALZKB_HOST:7474;
+        proxy_redirect off;
+    }
+}
