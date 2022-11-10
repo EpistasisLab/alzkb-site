@@ -7,6 +7,7 @@ services:
     restart: always
     ports:
       - 80:80
+      - 443:443
     volumes:
       - './nginx:/etc/nginx/conf.d'
       - '${ALZKB_DATA_ROOT}/nginx/logs:/var/log/nginx'
