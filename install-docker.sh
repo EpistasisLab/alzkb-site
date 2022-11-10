@@ -2,7 +2,7 @@
 
 #Installation
 # these commands are from https://docs.docker.com/engine/install/ubuntu/
-sudo apt-get remove docker dcker-engine docker.io containerd runc
+sudo apt-get remove docker docker-engine docker.io containerd runc
 
 sudo apt-get update
 

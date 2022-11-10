@@ -11,4 +11,4 @@ services:
       - './nginx:/etc/nginx/conf.d'
       - '${ALZKB_DATA_ROOT}/nginx/logs:/var/log/nginx'
     #replace ONLY env variables found in the template 
-    command: /bin/bash -c "envsubst \"$$(printf '$${%s} ' $$(env | cut -d'=' -f1))\" < /etc/nginx/conf.d/alzkb.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    command: /bin/bash -c "cp /etc/nginx/conf.d/${ALZKB_CERT} /etc/ssl/certs/${ALZKB_CERT} && cp /etc/nginx/conf.d/${ALZKB_CERT_KEY} /etc/ssl/private/${ALZKB_CERT_KEY} && envsubst \"$$(printf '$${%s} ' $$(env | cut -d'=' -f1))\" < /etc/nginx/conf.d/alzkb.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
