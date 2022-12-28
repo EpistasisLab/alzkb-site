@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   neo4j:
-    image: 'neo4j:5.3.0-community'
+    image: 'neo4j:4.4.8-community'
     env_file: .env
     volumes:
       - '${ALZKB_DATA_ROOT}/neo4j/data:/var/lib/neo4j/data'
