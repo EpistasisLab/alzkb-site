@@ -9,6 +9,7 @@ services:
       - 80:80
       - 443:443
     volumes:
+      - '../aliro-site/www/html:/var/www/html'
       - './nginx:/etc/nginx/conf.d'
       - '${ALZKB_DATA_ROOT}/nginx/logs:/var/log/nginx'
     #replace ONLY env variables found in the template 
