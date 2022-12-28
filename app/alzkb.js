@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 // const path = require('path')
 const config = require('./config/config')
 
@@ -11,7 +12,7 @@ require('ejs')
 
 app.use(cors())
 app.use(compression())
-app.use(express.static('public'))
+app.use(express.static('public', { maxAge: 3600000 }))
 app.set('view engine', 'ejs')
 // app.use(helmet())
 
@@ -31,4 +32,6 @@ app.get('/samples', (req, res) => {
   res.render('samples')
 })
 
-app.listen(process.env.ALZKB_PORT)
+app.listen(process.env.ALZKB_PORT, () => {
+  console.log("port", process.env.ALZKB_PORT)
+})
