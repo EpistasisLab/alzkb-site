@@ -24,7 +24,7 @@ This repository is comprised of the following components:
 ## Building and Running
 ### Building and deploying all services
 1. Get a dump file of the database [here](https://upenn.box.com/s/dalcofa8i7rkkc2h2n6bfg8nvmwi83pq) and put this file in **neo4j/dump/**, make sure the filename is alzkb.dump (rename it if necessary)
-2. Copy the **.env_sample** as **.inv** and set the variable values as needed for your environment.
+2. Copy the **.env_sample** as **.env** and set the variable values as needed for your environment.
 2. To deploy the Website, Neo4j, Nginx and dump the database into neo4j run: `docker compose up -d --build`
 ### Building and deploying the services independently
 The services can be built independently of each other as needed.  
