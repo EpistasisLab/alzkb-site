@@ -28,7 +28,7 @@ This repository is comprised of the following components:
 2. To deploy the Website, Neo4j, Nginx and dump the database into neo4j run: `docker compose up -d --build`
 ### Building and deploying the services independently
 The services can be built independently of each other as needed.  
-**First**, copy the **.env_sample** as **.inv** and update the variable values as needed for your environment.
+**First**, copy the **.env_sample** as **.env** and update the variable values as needed for your environment.
 - Website
   - Run `docker compose -f ./app.yml up -d --build`
 - Load the database dump
