@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name $ALZKB_HOST;
+    server_name $ALZKB_HOST $ALZKB_HOST2;
 
     location / {
         return 301 https://$host$request_uri;
@@ -9,7 +9,7 @@ server {
 
 server {
     listen 80;
-    server_name $ALIRO_HOST;
+    server_name $ALIRO_HOST $ALIRO_HOST2;
 
     location / {
         return 301 https://$host$request_uri;
@@ -18,7 +18,7 @@ server {
 
 server {
     listen 443 ssl;
-    server_name $ALZKB_HOST;
+    server_name $ALZKB_HOST $ALZKB_HOST2;
 
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log;
@@ -37,7 +37,7 @@ server {
 
 server {
     listen 443 ssl;
-    server_name $ALIRO_HOST;
+    server_name $ALIRO_HOST $ALIRO_HOST2;
 
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log;
@@ -55,10 +55,9 @@ server {
 server {
     listen 80;
     server_name $ALZKB_NEO4J_BROWSER;
-
     location / {
         proxy_set_header Host $host;
-        proxy_pass https://$ALZKB_NEO4J_BROWSER;
+        proxy_pass https://$ALZKB_NEO4J_BROWSER:7474;
         proxy_redirect off;
     }
 }
@@ -71,4 +70,5 @@ server {
         proxy_set_header Host $host;
         proxy_pass https://$ALZKB_NEO4J_BROWSER:7473;
         proxy_redirect off;
+    }
 }
