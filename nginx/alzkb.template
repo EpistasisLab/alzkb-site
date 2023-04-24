@@ -1,4 +1,27 @@
 server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    return 444;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name _;
+    ssl_certificate /etc/ssl/certs/$ALZKB_CERT;
+    ssl_certificate_key /etc/ssl/private/$ALZKB_CERT_KEY;
+    return 444;
+}
+
+server {
+    listen 7473 default_server;
+    listen [::]:7473 default_server;
+    server_name _;
+    return 444;
+}
+
+server {
     listen 80;
     server_name $ALZKB_HOST $ALZKB_HOST2;
 
@@ -61,7 +84,6 @@ server {
         proxy_redirect off;
     }
 }
-
 server {
     listen 443;
     server_name $ALZKB_NEO4J_BROWSER;

@@ -1,6 +1,6 @@
 const config = {
   dev: {
-    neo_browser: 'http://' + process.env.ALZKB_NEO4J_BROWSER + ':7474/browser/',
+    neo_browser: 'http://' + process.env.ALZKB_NEO4J_BROWSER + ':' + process.env.ALZKB_NEO4J_BROWSER_HTTP_PORT + '/browser/',
   },
   prod: {
     neo_browser: 'https://' + process.env.ALZKB_NEO4J_BROWSER + '/browser/'
