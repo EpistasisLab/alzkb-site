@@ -7,7 +7,7 @@ const config = {
   }
 }
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "prod") {
   module.exports = config.prod
 } else {
   module.exports = config.dev

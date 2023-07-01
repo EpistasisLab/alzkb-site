@@ -51,5 +51,5 @@ The **.env_sample** file contains the following environmental variables:
 - `NEO4J_*` variables to configure Neo4j
   - For more information about these varibales, see the neo4j.conf [documenation](https://neo4j.com/docs/operations-manual/4.4/configuration/neo4j-conf/).
   - More details about how these variables map to the neo4j.conf file can be found [here](https://neo4j.com/docs/operations-manual/current/docker/configuration/)
-- `NODE_ENV` Set to either **production** or **development** 
+- `NODE_ENV` Set to either **prod** or **dev** 
   - see [here](https://docs.npmjs.com/cli/v8/commands/npm-install) for more details.
