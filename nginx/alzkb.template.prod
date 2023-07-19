@@ -71,8 +71,8 @@ server {
 
     access_log /var/log/nginx/access.log;
     error_log /var/log/nginx/error.log;
-    ssl_certificate /etc/ssl/certs/$ALIRO_CERT;
-    ssl_certificate_key /etc/ssl/private/$ALIRO_CERT_KEY;
+    # ssl_certificate /etc/ssl/certs/$ALIRO_CERT;
+    # ssl_certificate_key /etc/ssl/private/$ALIRO_CERT_KEY;
 
     root /var/www/html;
     index index.html;
