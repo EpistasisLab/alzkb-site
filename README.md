@@ -25,7 +25,8 @@ This repository is comprised of the following components:
 ### Building and deploying all services
 1. Get a dump file of the database [here](https://upenn.box.com/s/dalcofa8i7rkkc2h2n6bfg8nvmwi83pq) and put this file in **neo4j/dump/**, make sure the filename is alzkb.dump (rename it if necessary)
 2. Copy the **.env_sample** as **.env** and set the variable values as needed for your environment.
-2. To deploy the Website, Neo4j, Nginx and dump the database into neo4j run: `docker compose up -d --build`
+3. **On the very first run**, uncomment the lines for the neo4j-admin service in the docker-compose.yml file, after the first run, the neo4j-admin service is not needed.
+4. To deploy the Website, Neo4j, Nginx and dump the database into neo4j run: `docker compose up -d --build`
 ### Building and deploying the services independently
 The services can be built independently of each other as needed.  
 **First**, copy the **.env_sample** as **.env** and update the variable values as needed for your environment.
@@ -49,7 +50,7 @@ The **.env_sample** file contains the following environmental variables:
 - `ALZKB_PORT` Port used by ExpressJS to serve the **Website**, Nginx will forward requests to `ALZKB_HOST` to this port.
 - `ALZKB_DATA_ROOT` Directory where the data from **Neo4J** will be stored on the host machine (data, logs, etc.)
 - `NEO4J_*` variables to configure Neo4j
-  - For more information about these varibales, see the neo4j.conf [documenation](https://neo4j.com/docs/operations-manual/4.4/configuration/neo4j-conf/).
+  - For more information about these varibales, see the neo4j.conf [documenation](https://neo4j.com/docs/operations-manual/5/configuration/neo4j-conf/).
   - More details about how these variables map to the neo4j.conf file can be found [here](https://neo4j.com/docs/operations-manual/current/docker/configuration/)
 - `NODE_ENV` Set to either **prod** or **dev** 
   - see [here](https://docs.npmjs.com/cli/v8/commands/npm-install) for more details.
